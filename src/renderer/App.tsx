@@ -20,12 +20,12 @@ export function App() {
    * Resizable Hook: Manages the width of the Stock Panel.
    * Persists the width to localStorage automatically.
    */
-  const stockPanel = useResizable({ 
-    initialWidth: 260, 
-    minWidth: 80, 
-    maxWidth: 450, 
-    storageKey: 'stockpanel-width', 
-    invert: true 
+  const stockPanel = useResizable({
+    initialWidth: 260,
+    minWidth: 100,
+    maxWidth: 450,
+    storageKey: 'stockpanel-width',
+    invert: true
   });
 
   // Keep track of window width for responsive calculations
@@ -110,9 +110,9 @@ export function App() {
             style={{ width: stockPanel.width, flexShrink: 0 }}
             className="border-l border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 overflow-hidden"
           >
-            <StockPanel 
-              width={stockPanel.width} 
-              showAdd={showAddStock} 
+            <StockPanel
+              width={stockPanel.width}
+              showAdd={showAddStock}
               onShowAdd={setShowAddStock}
             />
           </div>
