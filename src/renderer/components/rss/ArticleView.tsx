@@ -51,7 +51,7 @@ export function ArticleView({ article, onToggleStar, onOpenInBrowser, onBack }: 
   const displayContent = article.content || article.summary || '';
 
   return (
-    <div className="flex-1 overflow-y-auto">
+    <div className="flex-1 min-w-0 overflow-y-auto overflow-x-hidden">
       <div className="max-w-2xl mx-auto px-6 py-8">
         {/* Header */}
         <div className="mb-6">

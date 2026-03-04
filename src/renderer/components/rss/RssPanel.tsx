@@ -250,7 +250,7 @@ export function RssPanel({
   }, [selectArticle, handleOpenInBrowser, handleRefresh, handleToggleStar]);
 
   return (
-    <div className="flex flex-1 min-h-0 min-w-0">
+    <div className="flex flex-1 min-h-0 min-w-0 overflow-hidden">
       {/* Sidebar — resizable */}
       {showSidebar && (
         <div style={{ width: sidebar.width, flexShrink: 0 }} className="border-r border-gray-200 dark:border-gray-800 flex flex-col h-full bg-gray-50 dark:bg-gray-900 overflow-hidden">
@@ -289,9 +289,9 @@ export function RssPanel({
 
       {/* Article list — resizable */}
       {showArticleList && (
-        <div 
-          style={{ width: showSidebar ? articleList.width : 'auto', flex: showSidebar ? 'none' : 1, flexShrink: 0 }} 
-          className="border-r border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden min-w-[200px]"
+        <div
+          style={{ width: showSidebar ? articleList.width : undefined, flex: showSidebar ? '0 1 auto' : 1 }}
+          className="border-r border-gray-200 dark:border-gray-800 flex flex-col overflow-hidden min-w-0"
         >
           <div className="titlebar-drag h-12 flex items-end px-4 pb-1">
             {!showSidebar && (
